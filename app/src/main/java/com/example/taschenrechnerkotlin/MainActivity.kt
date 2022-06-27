@@ -29,12 +29,19 @@ class MainActivity : AppCompatActivity() {
         }
 
         geteiltButton.setOnClickListener {
-            ergebniss.text = (eingabe1.text.toString().toDouble() / eingabe2.text.toString().toDouble()).toString()
+
+            if (eingabe2.text.toString().toInt() == 0){
+                ergebniss.text = "error"
+                }else {
+                ergebniss.text = (eingabe1.text.toString().toDouble() / eingabe2.text.toString().toDouble()).toString()
+                }
         }
 
         MultiButton.setOnClickListener {
             ergebniss.text = (eingabe1.text.toString().toDouble() * eingabe2.text.toString().toDouble()).toString()
         }
+
+
 
     }
 
